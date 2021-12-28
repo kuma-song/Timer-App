@@ -1,5 +1,5 @@
 body {
-    /* font-family: "游ゴシック", "ヒラギノ角ゴ ProN", sans-serif monospace !important; */
+    font-family: sans-serif, monospace;
     background-color: black;
     color: white;
     /* margin: 0 vw; */
@@ -29,7 +29,6 @@ input {
     display: flex;
     justify-content: right;
     color: white;
-    font-family: sans-serif, monospace;
     font-weight: bold;
     font-size: 8vw;
     letter-spacing: 0.2rem;
@@ -45,7 +44,6 @@ input {
 .clock {
     background-color: black;
     text-align: center;
-    font-family: sans-serif, monospace;
     font-weight: bold;
     margin: 4vw 0;
 }
