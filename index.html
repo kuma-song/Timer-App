@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TIMER app</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="css/display.css" />
+  </head>
+  <body>
+
+    <!-- buttons -->
+    <div class="d-flex gap-4 align-items-center float-start">
+      <a href="#" id="fullscreen" ><i class="bi bi-fullscreen"></i></a>
+      <a href="#" id="fullscreen_exit" ><i class="bi bi-fullscreen-exit"></i></a>
+      <a href="#" id="open_controller" ><i class="bi bi-gear"></i></a>
+    </div>
+    
+    <div class="container-fluid mt-4">
+      <!-- current time -->
+      <div class="current_time">
+        <span id="current_time_hour"></span>
+        <span id="current_time_colon">:</span>
+        <span id="current_time_min"></span>
+      </div>
+
+      <!-- main clock -->
+      <div class="clock main_clock">
+        <p class="stop" id="main_clock">00:00</p>
+      </div>
+
+      <!-- sub clock -->
+      <div class="clock sub_clock">
+        <p class="stop" id="sub_clock">00:00</p>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="javascript/display.js"></script>
+  </body>
+</html>

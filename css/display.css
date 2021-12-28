@@ -1,0 +1,78 @@
+body {
+    /* font-family: "游ゴシック", "ヒラギノ角ゴ ProN", sans-serif monospace !important; */
+    background-color: black;
+    color: white;
+    /* margin: 0 vw; */
+    padding: 2vw;
+}
+
+section {
+    background-color: black;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+form {
+    font-size: 18px;
+}
+form span {
+    line-height: 0%;
+}
+
+input {
+    background-color: black !important;
+    color: white !important;
+    border: solid 1px #6c757d !important;
+}
+
+.current_time {
+    display: flex;
+    justify-content: right;
+    color: white;
+    font-family: sans-serif, monospace;
+    font-weight: bold;
+    font-size: 8vw;
+    letter-spacing: 0.2rem;
+    line-height: 100%;
+}
+#current_time_colon {
+    color: black;
+}
+.colon_on {
+    color: white !important;
+}
+
+.clock {
+    background-color: black;
+    text-align: center;
+    font-family: sans-serif, monospace;
+    font-weight: bold;
+    margin: 4vw 0;
+}
+.clock p {
+    border-radius: 10px;
+    line-height: 120%;
+}
+
+.main_clock p {
+    color: yellow;
+    font-size: 16vw;
+    letter-spacing: 0.4rem;
+}
+.sub_clock p {
+    color: rgb(0, 217, 255);
+    font-size: 11vw;
+    letter-spacing: 0.3rem;
+}
+.stop {
+    color: rgb(99, 99, 99) !important;
+}
+.over {
+    color: white !important;
+    background-color: rgb(198, 0, 0);
+}
+
+i {
+    font-size: 2.5rem;
+    color: gray;
+}

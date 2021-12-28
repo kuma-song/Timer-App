@@ -1,0 +1,58 @@
+body {
+    font-family: sans-serif, monospace;
+    margin-top: 15px;
+    background-color: #444;
+    color: white;
+    width: 720px;
+}
+
+section {
+    background-color: black;
+    padding: 15px 25px 20px 25px;
+    margin: 15px 0;
+    border-radius: 10px;
+}
+
+form {
+    font-size: 18px;
+}
+form span {
+    line-height: 0%;
+}
+
+input, select {
+    background-color: black !important;
+    color: white !important;
+    border: solid 1px #6c757d !important;
+}
+h3 {
+    font-weight: bold;
+}
+#main_section h3 {
+    color: yellow;
+}
+#sub_section h3 {
+    color: rgb(0, 217, 255);
+}
+.preview {
+    font-family: sans-serif, monospace;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 0.1rem;
+}
+
+.bi {
+    font-size: 1.5em;
+    line-height: 100%;
+}
+.matched {
+    margin: 0 2px;
+}
+
+.disabled {
+    opacity: 0.5;
+}
+button {
+    background-color: transparent;
+    border: none;
+}
