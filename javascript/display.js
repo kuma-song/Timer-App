@@ -41,7 +41,7 @@ open_controller.addEventListener("click", openController, false);
 function openController() {
   let controller_win;
   controller_win = window.open(
-    "html/controller.html",
+    "controller.html",
     "controller_win",
     "top=100,left=100,width=720,height=700"
   );
