@@ -1,11 +1,15 @@
-window.onload = function () {
+function $id(id) {
+  return document.getElementById(id);
+}
+
+window.addEventListener("load", function () {
   fullscreenChange();
+  setInterval(currentTime, 500);
+});
 
-  let timeIntervId = setInterval(currentTime, 500);
-};
-
-let fullscreen = $id("fullscreen");
-let fullscreen_exit = $id("fullscreen_exit");
+// Fullscreen =========================================
+const fullscreen = $id("fullscreen");
+const fullscreen_exit = $id("fullscreen_exit");
 
 fullscreen.addEventListener(
   "click",
@@ -21,7 +25,6 @@ fullscreen_exit.addEventListener(
   },
   false
 );
-
 document.addEventListener("webkitfullscreenchange", fullscreenChange, false);
 
 function fullscreenChange() {
@@ -34,30 +37,27 @@ function fullscreenChange() {
   }
 }
 
-let open_controller = $id("open_controller")
+// Controller =======================================================
+const open_controller = $id("open_controller");
 
 open_controller.addEventListener("click", openController, false);
 
 function openController() {
-  let controller_win;
-  controller_win = window.open(
+  const controller_win = window.open(
     "controller.html",
     "controller_win",
     "top=100,left=100,width=720,height=700"
   );
 }
 
-function $id(id) {
-  return document.getElementById(id);
-}
+// Current time ========================================
+const current_time_hour = $id("current_time_hour");
+const current_time_min = $id("current_time_min");
+const current_time_colon = $id("current_time_colon");
 
-// 現在時刻
 function currentTime() {
-  var hour, min;
-  var current_time_hour = $id("current_time_hour");
-  var current_time_min = $id("current_time_min");
-  var current_time_colon = $id("current_time_colon");
-  var now = new Date();
+  let hour, min;
+  const now = new Date();
 
   hour = now.getHours();
   min = now.getMinutes();

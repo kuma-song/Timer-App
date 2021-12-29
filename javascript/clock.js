@@ -48,8 +48,6 @@ class Clock {
   }
 
   start() {
-    const clock_type = this.name;
-    const clock = this.clock;
     let hour, min, sec, time;
     const now = new Date();
     let now_total_second, alerm_total_second;
@@ -78,7 +76,6 @@ class Clock {
     this.time = time;
 
     this.ending_time.setSeconds(this.ending_time.getSeconds() + this.time);
-    const ending_time = this.ending_time;
     this.interv_id = setInterval(this.updateClock.bind(this), 100);
   }
 
@@ -96,12 +93,13 @@ class Clock {
   }
 
   updateClock(ending_time) {
-    const now = new Date();
-    ending_time = this.ending_time;
-    const remaining_time = ending_time.getTime() - now.getTime();
     const clock = this.clock;
     const preview = this.preview;
-    var hour, min, sec;
+    const now = new Date();
+    let hour, min, sec;
+
+    ending_time = this.ending_time;
+    const remaining_time = ending_time.getTime() - now.getTime();
 
     this.time = Math.ceil(remaining_time / 1000);
     this.time = Math.floor(this.time);
@@ -121,12 +119,12 @@ class Clock {
     hour = parseInt(time / (60 * 60), 10) * coefficient;
     min = parseInt((time - hour * 3600) / 60, 10) * coefficient;
     sec = (time % 60) * coefficient;
-    min = ("0" + min).slice(-2);
-    sec = ("0" + sec).slice(-2);
+    min = Clock.zeroFill(min);
+    sec = Clock.zeroFill(sec);
     if (hour === 0) {
-      clock.innerHTML = prefix + min + ":" + sec;
+      clock.innerHTML = `${prefix + min}:${sec}`;
     } else {
-      clock.innerHTML = prefix + hour + ":" + min + ":" + sec;
+      clock.innerHTML = `${prefix + hour}:${min}:${sec}`;
     }
     preview.innerHTML = clock.innerHTML;
   }
@@ -144,12 +142,10 @@ class Clock {
     if (min >= 60) {
       min -= 60;
       hour += 1;
-      if (hour >= 24) {
-        hour -= 24;
-      }
+      if (hour >= 24) hour -= 24;
     }
     this.form.alarm_hour.value = hour;
-    this.form.alarm_min.value = ("0" + min).slice(-2);
+    this.form.alarm_min.value = Clock.zeroFill(min);
   }
 
   timerMatchCheck() {
@@ -166,22 +162,17 @@ class Clock {
   }
 
   timerReload() {
-    const clock = this.name;
-    // const timer_min = $id(`${clock}_timer_min`);
-    // const timer_sec = $id(`${clock}_timer_sec`);
-    // const timer_select = $id(`${clock}_timer_select`);
-
     this.form.timer_min.value = this.timer_select.value;
     this.form.timer_sec.value = "0";
-
     this.timerMatchCheck();
   }
 
-  zeroFill() {
-    let min = this.form.alarm_min.value;
-    min = ("0" + min).slice(-2);
-    this.form.alarm_min.value = min;
-    console.log("*")
+  alarmMinZeroFill() {
+    this.form.alarm_min.value = Clock.zeroFill(this.form.alarm_min.value);
+  }
+
+  static zeroFill(num) {
+    return ("0" + num).slice(-2);
   }
 }
 
